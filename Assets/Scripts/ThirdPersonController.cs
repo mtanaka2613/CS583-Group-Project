@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -25,11 +26,17 @@ public class ThirdPersonController : MonoBehaviour
 
     private Animator animator;
 
+    public BoxCollider[] childColliders;
+
     private void Awake()
     {
         rb = gameObject.GetComponent<Rigidbody>();
         playerActionsAsset = new ThirdPersonActionAsset(); 
         animator = gameObject.GetComponent<Animator>();
+        childColliders = GetComponentsInChildren<BoxCollider>(true);
+        childColliders[0].enabled = false; //Sword Box Collider
+
+
     }
 
     private void OnEnable()
@@ -128,7 +135,13 @@ public class ThirdPersonController : MonoBehaviour
 
     private void DoAttack(InputAction.CallbackContext obj)
     {
+        childColliders[0].enabled = true; //TODO need to find better solution to toggling Sword Box Collider
         animator.SetTrigger("attack");
+    }
+
+    private void OnMouseUp()
+    {
+        childColliders[0].enabled = false; //TODO need to find better solution to toggling Sword Box Collider
     }
 
     private void DoBlock(InputAction.CallbackContext obj)
