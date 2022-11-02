@@ -5,7 +5,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class ThirdPersonController : MonoBehaviour
+public class ThirdPersonController: MonoBehaviour
 {
     //input fields
     private ThirdPersonActionAsset playerActionsAsset;
@@ -34,7 +34,8 @@ public class ThirdPersonController : MonoBehaviour
         playerActionsAsset = new ThirdPersonActionAsset(); 
         animator = gameObject.GetComponent<Animator>();
         childColliders = GetComponentsInChildren<BoxCollider>(true);
-        childColliders[0].enabled = false; //Sword Box Collider
+        childColliders[0].enabled = false; //Shield Box Collider
+        childColliders[1].enabled = false; //Sword Box Collider
 
 
     }
@@ -135,13 +136,13 @@ public class ThirdPersonController : MonoBehaviour
 
     private void DoAttack(InputAction.CallbackContext obj)
     {
-        childColliders[0].enabled = true; //TODO need to find better solution to toggling Sword Box Collider
+        childColliders[1].enabled = true; //TODO need to find better solution to toggling Sword Box Collider
         animator.SetTrigger("attack");
     }
 
     private void OnMouseUp()
     {
-        childColliders[0].enabled = false; //TODO need to find better solution to toggling Sword Box Collider
+        childColliders[1].enabled = false; //TODO need to find better solution to toggling Sword Box Collider
     }
 
     private void DoBlock(InputAction.CallbackContext obj)
@@ -150,6 +151,7 @@ public class ThirdPersonController : MonoBehaviour
         if (!animator.GetBool("block"))
         {
             animator.SetBool("block", true);
+            childColliders[0].enabled = true;
             return;
         }
         
@@ -157,6 +159,7 @@ public class ThirdPersonController : MonoBehaviour
         if (animator.GetBool("block"))
         {
             animator.SetBool("block", false);
+            childColliders[0].enabled = false;
             return;
         }
     }

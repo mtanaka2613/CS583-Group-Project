@@ -242,24 +242,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 01494710b124ea74b92af2262805ac5c, type: 3}
---- !u!1 &1817614988 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2351471103126196147, guid: 7c5a24c783c37c948b259d72de0b26ac, type: 3}
-  m_PrefabInstance: {fileID: 1451398259904232562}
-  m_PrefabAsset: {fileID: 0}
---- !u!65 &1817614992
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1817614988}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.39174208, y: 1.4156286, z: 0.08912745}
-  m_Center: {x: 0.000000104592246, y: 0.5035896, z: -0.000000042633083}
 --- !u!1 &2054610795 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 388476414, guid: 7df524699deb44341b3693c8538df185, type: 3}
@@ -288,18 +270,6 @@ PrefabInstance:
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 963194227}
-    - target: {fileID: 1451398261413040109, guid: 7c5a24c783c37c948b259d72de0b26ac, type: 3}
-      propertyPath: swordController
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 1451398261413040111, guid: 7c5a24c783c37c948b259d72de0b26ac, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2322815154853580936, guid: 7c5a24c783c37c948b259d72de0b26ac, type: 3}
-      propertyPath: m_TagString
-      value: Untagged
-      objectReference: {fileID: 0}
     - target: {fileID: 2351471103126196147, guid: 7c5a24c783c37c948b259d72de0b26ac, type: 3}
       propertyPath: m_TagString
       value: Weapon
@@ -352,6 +322,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8074659871020675176, guid: 7c5a24c783c37c948b259d72de0b26ac, type: 3}
+      propertyPath: m_TagString
+      value: Shield
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c5a24c783c37c948b259d72de0b26ac, type: 3}
 --- !u!4 &4684403151985267702 stripped
@@ -388,11 +362,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8095381497227825804, guid: df0302ddc2a17d7478822308fa3ea433, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000007450581
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 8095381497227825804, guid: df0302ddc2a17d7478822308fa3ea433, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000000007450581
+      value: -0.0000000018626451
       objectReference: {fileID: 0}
     - target: {fileID: 8095381497927350851, guid: df0302ddc2a17d7478822308fa3ea433, type: 3}
       propertyPath: m_LocalRotation.w
