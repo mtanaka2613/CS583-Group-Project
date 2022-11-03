@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor;
+using UnityEditor.TextCore.Text;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -18,22 +19,24 @@ public class ThirdPersonController: MonoBehaviour
     [SerializeField]
     private float jumpForce = 10f;
     [SerializeField]
-    private float maxSpeed = 5f;
+    private float maxSpeed = 5f; //Player Movement Speed
     private Vector3 forceDirection = Vector3.zero;
 
     [SerializeField]
     private Camera playerCamera;
-
     private Animator animator;
 
-    public BoxCollider[] childColliders;
+    //Colliders
+    private BoxCollider[] childColliders;
+    private CapsuleCollider playerCollider;
 
     private void Awake()
     {
         rb = gameObject.GetComponent<Rigidbody>();
         playerActionsAsset = new ThirdPersonActionAsset(); 
         animator = gameObject.GetComponent<Animator>();
-        childColliders = GetComponentsInChildren<BoxCollider>(true);
+        childColliders = GetComponentsInChildren<BoxCollider>(true); //Array of Colliders in Child Objects of Player Object
+        playerCollider = GetComponent<CapsuleCollider>(); //Player Capsule Collider
         childColliders[0].enabled = false; //Shield Box Collider
         childColliders[1].enabled = false; //Sword Box Collider
 
@@ -81,6 +84,7 @@ public class ThirdPersonController: MonoBehaviour
 
         LookAt();
     }
+
 
     //Controls the direction the player is looking
     private void LookAt()
@@ -136,13 +140,17 @@ public class ThirdPersonController: MonoBehaviour
 
     private void DoAttack(InputAction.CallbackContext obj)
     {
-        childColliders[1].enabled = true; //TODO need to find better solution to toggling Sword Box Collider
         animator.SetTrigger("attack");
+    }
+
+    private void OnMouseDown()
+    {
+        childColliders[1].enabled = true; //Enables Sword Collider
     }
 
     private void OnMouseUp()
     {
-        childColliders[1].enabled = false; //TODO need to find better solution to toggling Sword Box Collider
+        childColliders[1].enabled = false; //Disables Sword Collider
     }
 
     private void DoBlock(InputAction.CallbackContext obj)
@@ -164,4 +172,34 @@ public class ThirdPersonController: MonoBehaviour
         }
     }
 
+   //Player Collides with another Collider
+    private void OnCollisionEnter(Collision collision)
+    {
+        //Player Collides with a powerup
+        if (collision.collider.CompareTag("Powerup"))
+        {
+            Debug.Log("Picked up Powerup");
+            Destroy(collision.collider.gameObject); //Deletes the object
+            DeterminePowerupType(collision.collider.gameObject.name); //Helper Function
+        }
+    }
+
+    //Help Determines the Powerup Type
+    private void DeterminePowerupType(String PowerupName)
+    {
+        //Calls Speed Powerup
+        if (PowerupName.Contains("Speed"))
+        {
+            StartCoroutine(SpeedPowerup());
+        }
+
+    }
+
+    //Speed Powerup
+    IEnumerator SpeedPowerup()
+    {
+        maxSpeed = 1000f; //Speed boost
+        yield return new WaitForSecondsRealtime(10f); //Timer active for 10 seconds
+        maxSpeed = 5f; //Revert back to normal speed
+    }
 }
