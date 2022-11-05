@@ -19,7 +19,8 @@ public class ThirdPersonController: MonoBehaviour
     [SerializeField]
     private float jumpForce = 10f;
     [SerializeField]
-    private float maxSpeed = 5f; //Player Movement Speed
+    private float maxSpeed = 5.0f; //Player Movement Speed
+
     private Vector3 forceDirection = Vector3.zero;
 
     [SerializeField]
@@ -27,7 +28,7 @@ public class ThirdPersonController: MonoBehaviour
     private Animator animator;
 
     //Colliders
-    private BoxCollider[] childColliders;
+    public BoxCollider[] childColliders;
     private CapsuleCollider playerCollider;
 
     private void Awake()
@@ -140,13 +141,14 @@ public class ThirdPersonController: MonoBehaviour
 
     private void DoAttack(InputAction.CallbackContext obj)
     {
+        childColliders[1].enabled = true; // Enables Sword Collider
         animator.SetTrigger("attack");
     }
 
-    private void OnMouseDown()
-    {
-        childColliders[1].enabled = true; //Enables Sword Collider
-    }
+    //private void OnMouseDown()
+    //{
+    //    childColliders[1].enabled = true; //Enables Sword Collider
+    //}
 
     private void OnMouseUp()
     {
@@ -190,6 +192,7 @@ public class ThirdPersonController: MonoBehaviour
         //Calls Speed Powerup
         if (PowerupName.Contains("Speed"))
         {
+            Debug.Log("Speed Powerup Active");
             StartCoroutine(SpeedPowerup());
         }
 
@@ -200,6 +203,7 @@ public class ThirdPersonController: MonoBehaviour
     {
         maxSpeed = 1000f; //Speed boost
         yield return new WaitForSecondsRealtime(10f); //Timer active for 10 seconds
-        maxSpeed = 5f; //Revert back to normal speed
+        maxSpeed = 5.0f; //Revert back to normal speed
+        Debug.Log("Speed Powerup Expired");
     }
 }
