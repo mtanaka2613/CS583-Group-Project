@@ -4,7 +4,7 @@ Simple overview of use/purpose.
 
 ## Description
 
-An in-depth paragraph about your project and overview of use.
+Our group project for CS583. A 3rd Person Action Fantasy Hack & Slash game produced and developed on Unity.
 
 ## Getting Started
 
@@ -57,4 +57,5 @@ Inspiration, code snippets, etc.
 * [Pure Poly | Free Low Poly Nature Forest](https://assetstore.unity.com/packages/3d/environments/landscapes/free-low-poly-nature-forest-205742)
 * [Dungeon Mason | RPG Tiny Hero Duo PBR Polyart](https://assetstore.unity.com/packages/3d/characters/humanoids/rpg-tiny-hero-duo-pbr-polyart-225148)
 * [Dungeon Mason | Mini Legion Grunt PBR HP Polyart](https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/mini-legion-grunt-pbr-hp-polyart-98187)
-* [Dungeon Mason |RPG Monster Duo PBR Polyartder](https://assetstore.unity.com/packages/3d/characters/creatures/rpg-monster-duo-pbr-polyart-157762)
+* [Dungeon Mason | RPG Monster Duo PBR Polyartder](https://assetstore.unity.com/packages/3d/characters/creatures/rpg-monster-duo-pbr-polyart-157762)
+* [Holotna | RPG Food & Drinks Pack](https://assetstore.unity.com/packages/3d/props/food/rpg-food-drinks-pack-121067)
