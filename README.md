@@ -41,3 +41,7 @@ Assets used:
 * [Dungeon Mason | Mini Legion Grunt PBR HP Polyart](https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/mini-legion-grunt-pbr-hp-polyart-98187)
 * [Dungeon Mason | RPG Monster Duo PBR Polyartder](https://assetstore.unity.com/packages/3d/characters/creatures/rpg-monster-duo-pbr-polyart-157762)
 * [Holotna | RPG Food & Drinks Pack](https://assetstore.unity.com/packages/3d/props/food/rpg-food-drinks-pack-121067)
+
+Learning References:
+*[Controller and Keyboard Menu Navigation w/ Input System - Unity Tutorial](https://www.youtube.com/watch?v=Hn804Wgr3KE)
+*[3rd Person Controller - Unity's New Input System](https://www.youtube.com/watch?v=WIl6ysorTE0)
