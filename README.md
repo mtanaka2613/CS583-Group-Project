@@ -8,11 +8,6 @@ Our group project for CS583. A 3rd Person Action Fantasy Hack & Slash game produ
 
 ## Getting Started
 
-### Dependencies
-
-* Describe any prerequisites, libraries, OS version, etc., needed before installing program.
-* ex. Windows 10
-
 ### Installing
 
 * Download the code
