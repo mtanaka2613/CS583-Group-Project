@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene(1);
     }
 
-    public void BackFromControls()
+    public void MainMenu()
     {
         SceneManager.LoadScene(0);
     }

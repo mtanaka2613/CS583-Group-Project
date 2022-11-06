@@ -5,6 +5,7 @@ using UnityEditor;
 using UnityEditor.TextCore.Text;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class ThirdPersonController: MonoBehaviour
 {
@@ -205,5 +206,15 @@ public class ThirdPersonController: MonoBehaviour
         yield return new WaitForSecondsRealtime(10f); //Timer active for 10 seconds
         maxSpeed = 5.0f; //Revert back to normal speed
         Debug.Log("Speed Powerup Expired");
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("HiddenItem"))
+        {
+            Destroy(other.gameObject);
+            // Load Game complete screen
+            SceneManager.LoadScene(7);
+        }
     }
 }
