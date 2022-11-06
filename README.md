@@ -15,23 +15,11 @@ Our group project for CS583. A 3rd Person Action Fantasy Hack & Slash game produ
 
 ### Installing
 
-* How/where to download your program
-* Any modifications needed to be made to files/folders
+* Download the code
 
 ### Executing program
 
-* How to run the program
-* Step-by-step bullets
-```
-code blocks for commands
-```
-
-## Help
-
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
+* Open up executable in BrawlingMayhem_Demo folder
 
 ## Authors
 
@@ -41,19 +29,18 @@ command to run if program contains helper info
 * Hanlin Jin - Lead Enemy Developer
 
 
-
 ## Version History
 
 * 0.2
-    * Various bug fixes and optimizations
-    * See [commit change]() or See [release history]()
+    * Added scripts, scenes, assets, aniamtions, etc.
+    * Created demo executable
 * 0.1
     * Initial Release
 
 
 ## Acknowledgments
 
-Inspiration, code snippets, etc.
+Assets used:
 * [Pure Poly | Free Low Poly Nature Forest](https://assetstore.unity.com/packages/3d/environments/landscapes/free-low-poly-nature-forest-205742)
 * [Dungeon Mason | RPG Tiny Hero Duo PBR Polyart](https://assetstore.unity.com/packages/3d/characters/humanoids/rpg-tiny-hero-duo-pbr-polyart-225148)
 * [Dungeon Mason | Mini Legion Grunt PBR HP Polyart](https://assetstore.unity.com/packages/3d/characters/humanoids/fantasy/mini-legion-grunt-pbr-hp-polyart-98187)
