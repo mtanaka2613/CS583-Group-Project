@@ -27,7 +27,7 @@ Our group project for CS583. A 3rd Person Action Fantasy Hack & Slash game produ
 ## Version History
 
 * 0.2
-    * Added scripts, scenes, assets, aniamtions, etc.
+    * Added scripts, scenes, assets, animations, etc.
     * Created demo executable
 * 0.1
     * Initial Release
