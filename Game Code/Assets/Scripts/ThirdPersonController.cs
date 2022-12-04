@@ -215,8 +215,9 @@ public class ThirdPersonController: MonoBehaviour
         if (other.CompareTag("HiddenItem"))
         {
             Destroy(other.gameObject);
-            // Load Game complete screen
-            SceneManager.LoadScene(7);
+            // Load level cleared screen
+            SceneManager.LoadScene(9);
+            Cursor.lockState = CursorLockMode.Confined;
         }
     }
 }
