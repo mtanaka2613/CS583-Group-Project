@@ -11,6 +11,7 @@ using UnityEngine.SceneManagement;
 
 public class ThirdPersonController: MonoBehaviour
 {
+
     //input fields
     private ThirdPersonActionAsset playerActionsAsset;
     private InputAction move;
@@ -215,9 +216,16 @@ public class ThirdPersonController: MonoBehaviour
         if (other.CompareTag("HiddenItem"))
         {
             Destroy(other.gameObject);
-            // Load level cleared screen
-            SceneManager.LoadScene(9);
-            Cursor.lockState = CursorLockMode.Confined;
+            // Check if player completed all levels
+            if (GameManager.Instance.hasCompletedAllLevels())
+            {
+                SceneManager.LoadScene(9); //End Screen
+                Cursor.lockState = CursorLockMode.Confined;
+            }
+            else {
+                SceneManager.LoadScene(8); //Level cleared screen
+                Cursor.lockState = CursorLockMode.Confined;
+            }
         }
     }
 }

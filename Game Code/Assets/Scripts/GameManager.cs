@@ -1,91 +1,53 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-#if UNITY_EDITOR
-using UnityEditor;
-#endif
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using Random = UnityEngine.Random;
-using UnityEngine.InputSystem;
 
 public class GameManager : MonoBehaviour
 {
-    private UIActionAsset uiActionAsset;
-    [SerializeField] GameObject pauseMenu;
+    public static GameManager Instance;
+
+    public List<int> levelsPlayed = new List<int>();
 
     private void Awake()
     {
-        uiActionAsset = new UIActionAsset();
-    }
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
 
-    private void OnEnable()
-    {
-        uiActionAsset.UI.Pause.started += Pause;
-        uiActionAsset.UI.Enable();
-    }
-
-    private void OnDisable()
-    {
-        uiActionAsset.UI.Pause.started -= Pause;
-        uiActionAsset.UI.Disable();
-    }
-
-    public void Pause(InputAction.CallbackContext obj)
-    {
-        Cursor.lockState = CursorLockMode.Confined;
-        pauseMenu.SetActive(true);
-        Time.timeScale = 0f;
-        
-    }
-    public void StartNew()
-    {
-        // create a random int to select the first level 
-        int randomLevel = Random.Range(2, 8);
-        SceneManager.LoadScene(randomLevel);
-        Cursor.lockState = CursorLockMode.Locked;
-    }
-
-    public void Exit()
-    {
-#if UNITY_EDITOR
-        EditorApplication.ExitPlaymode();
-#else
-        Application.Quit();
-#endif
-    }
-
-    public void ControlsMenu()
-    {
-        SceneManager.LoadScene(1);
-        Cursor.lockState = CursorLockMode.Confined;
-    }
-
-    public void MainMenu()
-    {
-        Time.timeScale = 1f;
-        SceneManager.LoadScene(0);
-        Cursor.lockState = CursorLockMode.Confined;
-    }
-
-    public void Resume()
-    {
-        pauseMenu.SetActive(false);
-        Time.timeScale = 1f;
-        Cursor.lockState = CursorLockMode.Locked;
+        Instance= this; 
+        DontDestroyOnLoad(gameObject);
     }
 
     public void NextLevel()
     {
-        int randomLevel = Random.Range(2, 7);
-        //TODO: check if rand level has been played
+        int randomLevel;
+        //prevents a random level from being selected again
+        do
+        {
+            randomLevel = Random.Range(2, 8);
+        }
+        while (levelsPlayed.Contains(randomLevel));
+        levelsPlayed.Add(randomLevel);
+
         SceneManager.LoadScene(randomLevel);
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    public Boolean hasLevelPlayed(int randLevel)
+    public Boolean hasCompletedAllLevels()
     {
-        return true;
+        // if 6 levels have been completed then the player has completed all the levels, so return true
+        if (levelsPlayed.Count == 6)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
     }
-
 }
