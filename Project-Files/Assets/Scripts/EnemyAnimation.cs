@@ -4,7 +4,7 @@ usingSystem.Collections;
 
  
 
-public class Enimy : MonoBehaviour {
+public class EnemyAnimation : MonoBehaviour {
 
  
 
