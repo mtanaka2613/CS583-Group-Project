@@ -64,9 +64,9 @@ public class Enimy : MonoBehaviour {
 
                 int num = Random.Range(0, 2);//There are two types of attack animations, here we use random numbers ([0], [1]) to switch between the two animations
 
-                if (num == 0)animator.SetTrigger("Attack1");
+                if (num == 0)animator.SetTrigger("Attack01");
 
-                else animator.SetTrigger("Attack2");
+                else animator.SetTrigger("Attack02");
 
  
 
@@ -92,7 +92,7 @@ public class Enimy : MonoBehaviour {
 
             attackCounter = attackTime;//Attacks immediately every time it moves to the minimum attack distance
 
-            if(animator.GetCurrentAnimatorStateInfo(0).IsName("EnimyWalk"))//EnimyRun the state of the walk in the animation state machine
+            if(animator.GetCurrentAnimatorStateInfo(0).IsName("Walk"))//EnimyRun the state of the walk in the animation state machine
 
             cc.SimpleMove(transform.forward*speed);
 
