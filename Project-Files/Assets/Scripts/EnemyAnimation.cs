@@ -92,7 +92,7 @@ public class Enimy : MonoBehaviour {
 
             attackCounter = attackTime;//Attacks immediately every time it moves to the minimum attack distance
 
-            if(animator.GetCurrentAnimatorStateInfo(0).IsName("Walk"))//EnimyRun the state of the walk in the animation state machine
+            if(animator.GetCurrentAnimatorStateInfo(0).IsName("EnemyWalk"))//EnemyRun the state of the walk in the animation state machine
 
             cc.SimpleMove(transform.forward*speed);
 
