@@ -45,3 +45,4 @@ Assets used:
 Learning References:
 * [Controller and Keyboard Menu Navigation w/ Input System - Unity Tutorial](https://www.youtube.com/watch?v=Hn804Wgr3KE)
 * [3rd Person Controller - Unity's New Input System](https://www.youtube.com/watch?v=WIl6ysorTE0)
+* [Pause Menu](https://www.youtube.com/watch?v=tfzwyNS1LUY)
