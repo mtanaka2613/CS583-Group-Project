@@ -35,6 +35,17 @@ public class ThirdPersonController: MonoBehaviour
     public BoxCollider[] childColliders;
     private CapsuleCollider playerCollider;
 
+    //Health
+    public int maxHealth = 10;
+    public int currentHealth;
+    public HealthBar healthBar;
+
+    //reference to SceneController
+    public SceneController sc;
+
+    //Amount of hidden items
+    int totalItems = 0;
+
     private void Awake()
     {
         rb = gameObject.GetComponent<Rigidbody>();
@@ -45,7 +56,8 @@ public class ThirdPersonController: MonoBehaviour
         childColliders[0].enabled = false; //Shield Box Collider
         childColliders[1].enabled = false; //Sword Box Collider
 
-
+        currentHealth = maxHealth; //Set health
+        healthBar.SetMaxHealth(currentHealth);
     }
 
     private void OnEnable()
@@ -216,15 +228,22 @@ public class ThirdPersonController: MonoBehaviour
         if (other.CompareTag("HiddenItem"))
         {
             Destroy(other.gameObject);
+            totalItems += 1;
+
             // Check if player completed all levels
-            if (GameManager.Instance.hasCompletedAllLevels())
+            if (GameManager.Instance.hasCompletedAllLevels() & totalItems == 5)
             {
                 SceneManager.LoadScene(9); //End Screen
                 Cursor.lockState = CursorLockMode.Confined;
             }
-            else {
+            else if (totalItems == 5) 
+            {
                 SceneManager.LoadScene(8); //Level cleared screen
                 Cursor.lockState = CursorLockMode.Confined;
+            }
+            else
+            {
+                sc.UpdateItemsText(totalItems);
             }
         }
     }

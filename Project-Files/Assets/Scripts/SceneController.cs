@@ -7,15 +7,19 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class SceneController : MonoBehaviour
 {
     private UIActionAsset uiActionAsset;
     [SerializeField] GameObject pauseMenu;
 
+    public TextMeshProUGUI itemsText;
+
     private void Awake()
     {
         uiActionAsset = new UIActionAsset();
+        itemsText.text = "ITEMS: 0 / 5";
     }
 
     private void OnEnable()
@@ -69,6 +73,11 @@ public class SceneController : MonoBehaviour
         pauseMenu.SetActive(false);
         Time.timeScale = 1f;
         Cursor.lockState = CursorLockMode.Locked;
+    }
+
+    public void UpdateItemsText(int itemCount)
+    {
+        itemsText.text = "ITEMS: " + itemCount + " / 5";
     }
 
 }
