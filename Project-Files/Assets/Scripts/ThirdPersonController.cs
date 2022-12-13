@@ -1,15 +1,12 @@
 using System;
 using System.Collections;
-using System.Collections.Generic;
 #if UNITY_EDITOR
-using UnityEditor;
-using UnityEditor.TextCore.Text;
 #endif
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-public class ThirdPersonController: MonoBehaviour
+public class ThirdPersonController : MonoBehaviour
 {
 
     //input fields
@@ -38,7 +35,7 @@ public class ThirdPersonController: MonoBehaviour
     private void Awake()
     {
         rb = gameObject.GetComponent<Rigidbody>();
-        playerActionsAsset = new ThirdPersonActionAsset(); 
+        playerActionsAsset = new ThirdPersonActionAsset();
         animator = gameObject.GetComponent<Animator>();
         childColliders = GetComponentsInChildren<BoxCollider>(true); //Array of Colliders in Child Objects of Player Object
         playerCollider = GetComponent<CapsuleCollider>(); //Player Capsule Collider
@@ -71,14 +68,14 @@ public class ThirdPersonController: MonoBehaviour
         forceDirection += move.ReadValue<Vector2>().y * GetCameraForward(playerCamera) * movementForce;
 
         rb.AddForce(forceDirection, ForceMode.Impulse);
-        forceDirection = Vector3.zero;  
+        forceDirection = Vector3.zero;
 
         //adds increased velocity when falling after jumping
         if (rb.velocity.y < 0f)
         {
             rb.velocity -= Vector3.down * Physics.gravity.y * Time.fixedDeltaTime;
         }
-        
+
         //restricts the max velocity the player can move
         Vector3 horizontalVelocity = rb.velocity;
         horizontalVelocity.y = 0;
@@ -99,7 +96,7 @@ public class ThirdPersonController: MonoBehaviour
 
         if (move.ReadValue<Vector2>().sqrMagnitude > 0.1f && direction.sqrMagnitude > 0.1f)
         {
-            rb.rotation = Quaternion.LookRotation(direction,Vector3.up);
+            rb.rotation = Quaternion.LookRotation(direction, Vector3.up);
         }
         else
         {
@@ -168,7 +165,7 @@ public class ThirdPersonController: MonoBehaviour
             childColliders[0].enabled = true;
             return;
         }
-        
+
         //if blocking, undo blocking animation
         if (animator.GetBool("block"))
         {
@@ -178,13 +175,12 @@ public class ThirdPersonController: MonoBehaviour
         }
     }
 
-   //Player Collides with another Collider
+    //Player Collides with another Collider
     private void OnCollisionEnter(Collision collision)
     {
         //Player Collides with a powerup
         if (collision.collider.CompareTag("Powerup"))
         {
-            Debug.Log("Picked up Powerup");
             Destroy(collision.collider.gameObject); //Deletes the object
             DeterminePowerupType(collision.collider.gameObject.name); //Helper Function
         }
@@ -193,6 +189,7 @@ public class ThirdPersonController: MonoBehaviour
     //Help Determines the Powerup Type
     private void DeterminePowerupType(String PowerupName)
     {
+
         //Calls Speed Powerup
         if (PowerupName.Contains("Speed"))
         {
@@ -200,15 +197,45 @@ public class ThirdPersonController: MonoBehaviour
             StartCoroutine(SpeedPowerup());
         }
 
+        //Calls Big Sword Powerup
+        if (PowerupName.Contains("Big Sword"))
+        {
+            Debug.Log("Big Sword Powerup Active");
+            StartCoroutine(BigSwordPowerup());
+        }
+
+        if (PowerupName.Contains("Mega Jump"))
+        {
+            Debug.Log("Mega Jump Powerup Active");
+            StartCoroutine(MegaJumpPowerup());
+        }
+
     }
 
-    //Speed Powerup
     IEnumerator SpeedPowerup()
     {
         maxSpeed = 1000f; //Speed boost
         yield return new WaitForSecondsRealtime(10f); //Timer active for 10 seconds
         maxSpeed = 5.0f; //Revert back to normal speed
         Debug.Log("Speed Powerup Expired");
+    }
+
+    IEnumerator BigSwordPowerup()
+    {
+        Vector3 temp = new Vector3(childColliders[1].size.x, childColliders[1].size.y, childColliders[1].size.z); //Store original value of sword collider size
+        childColliders[1].size = temp * 2; //Doubles size of sword collider
+        yield return new WaitForSecondsRealtime(10f);
+        childColliders[1].size = temp; //Revert back to normal sword collider size
+        Debug.Log("Big Sword Powerup Expired");
+    }
+
+    IEnumerator MegaJumpPowerup()
+    {
+        float temp = jumpForce; //Store original value of jump force
+        jumpForce = 15f; //Jump height boost
+        yield return new WaitForSecondsRealtime(5.0f);
+        jumpForce = temp; //Revert back to normal jump force
+        Debug.Log("Mega Jump Powerup Expired");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -222,7 +249,8 @@ public class ThirdPersonController: MonoBehaviour
                 SceneManager.LoadScene(9); //End Screen
                 Cursor.lockState = CursorLockMode.Confined;
             }
-            else {
+            else
+            {
                 SceneManager.LoadScene(8); //Level cleared screen
                 Cursor.lockState = CursorLockMode.Confined;
             }
