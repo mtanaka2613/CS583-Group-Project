@@ -22,4 +22,14 @@ public class Enemyspawn : MonoBehaviour
     {
         
     }
+    
+    private Vector3 GenerateSpawnPosition()
+    {
+        float spawnPosX = Random.Range(-spawnRange, spawnRange);
+        float spawnPosY = Random.Range(-spawnRange, spawnRange);
+        
+        Vector3 randomPos = new Vector3(spawnPosX, spawnPosY, 0);
+        
+        return randomPos;
+    }
 }
