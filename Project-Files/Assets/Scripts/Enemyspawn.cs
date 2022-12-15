@@ -10,7 +10,7 @@ public class Enemyspawn : MonoBehaviour
     void Start()
     {
         float spawnPosX = Random.Range(-9, 9);
-        float spawnPosY = Random.Range(-9, 9)
+        float spawnPosY = Random.Range(-9, 9);
 
         Vector3 randomPos = new Vector3(spawnPosX, spawnPosY, 0);
 
