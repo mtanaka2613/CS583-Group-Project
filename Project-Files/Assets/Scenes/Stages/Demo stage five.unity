@@ -106,15 +106,15 @@ NavMeshSettings:
   m_BuildSettings:
     serializedVersion: 2
     agentTypeID: 0
-    agentRadius: 0.5
-    agentHeight: 2
-    agentSlope: 45
+    agentRadius: 1
+    agentHeight: 4.42
+    agentSlope: 36.5
     agentClimb: 0.4
     ledgeDropHeight: 0
     maxJumpAcrossDistance: 0
     minRegionArea: 2
     manualCellSize: 0
-    cellSize: 0.16666667
+    cellSize: 0.33333334
     manualTileSize: 0
     tileSize: 256
     accuratePlacement: 0
@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 40f2d1d7d2885134ca22086ba34ecafa, type: 2}
 --- !u!1 &611488
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,6 +411,67 @@ Transform:
   m_Father: {fileID: 2075843987}
   m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &27100661
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5005448486912084737, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 636474552}
+    - target: {fileID: 5311694882796314641, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
+      propertyPath: m_Name
+      value: Orc (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311694882796315631, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311694882796315631, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -42.50301
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311694882796315631, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.4041853
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311694882796315631, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -24.184572
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311694882796315631, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311694882796315631, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311694882796315631, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311694882796315631, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311694882796315631, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311694882796315631, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311694882796315631, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
 --- !u!1001 &31416458
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -656,6 +717,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Meadow_08 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 138836365270009319, guid: 7baba197ce36c92439b423eabaad3737, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 767562868964138845, guid: 7baba197ce36c92439b423eabaad3737, type: 3}
       propertyPath: m_RootOrder
       value: 9
@@ -841,12 +906,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1843455892}
     - target: {fileID: 1451398261413040109, guid: 7c5a24c783c37c948b259d72de0b26ac, type: 3}
+      propertyPath: powerUpText
+      value: 
+      objectReference: {fileID: 1843455893}
+    - target: {fileID: 1451398261413040109, guid: 7c5a24c783c37c948b259d72de0b26ac, type: 3}
       propertyPath: playerCamera
       value: 
       objectReference: {fileID: 1802869616}
     - target: {fileID: 6135645272647888772, guid: 7c5a24c783c37c948b259d72de0b26ac, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6135645272647888772, guid: 7c5a24c783c37c948b259d72de0b26ac, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1116,7 +1185,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &65917035
 GameObject:
@@ -1470,6 +1539,10 @@ PrefabInstance:
     - target: {fileID: 138836365270009319, guid: 7baba197ce36c92439b423eabaad3737, type: 3}
       propertyPath: m_Name
       value: PP_Meadow_08 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 138836365270009319, guid: 7baba197ce36c92439b423eabaad3737, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 767562868964138845, guid: 7baba197ce36c92439b423eabaad3737, type: 3}
       propertyPath: m_RootOrder
@@ -2351,11 +2424,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2105381935071098977, guid: b23c744d42631e140b4d2a12c7ff62ec, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 2105381935071098977, guid: b23c744d42631e140b4d2a12c7ff62ec, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.641073
+      value: -38.006
       objectReference: {fileID: 0}
     - target: {fileID: 2105381935071098977, guid: b23c744d42631e140b4d2a12c7ff62ec, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2363,7 +2436,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2105381935071098977, guid: b23c744d42631e140b4d2a12c7ff62ec, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -18.071104
+      value: -16.71
       objectReference: {fileID: 0}
     - target: {fileID: 2105381935071098977, guid: b23c744d42631e140b4d2a12c7ff62ec, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2990,6 +3063,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Rock_Moss_Grown_09 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4577034113271871886, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577034113271871886, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
 --- !u!4 &166639937 stripped
@@ -3084,6 +3165,14 @@ PrefabInstance:
     - target: {fileID: 4500668923149335752, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
       propertyPath: m_Name
       value: PP_Rock_Moss_Grown_11 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4500668923149335752, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4500668923149335752, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
@@ -3387,6 +3476,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Rock_Moss_Grown_11 (5)
       objectReference: {fileID: 0}
+    - target: {fileID: 4500668923149335752, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4500668923149335752, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
 --- !u!4 &220330569 stripped
@@ -3543,6 +3640,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Hyacinth_04 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2954823824624447290, guid: 194e9111af0c33840a49d573f2b26952, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 194e9111af0c33840a49d573f2b26952, type: 3}
 --- !u!4 &228446607 stripped
@@ -3620,6 +3721,14 @@ PrefabInstance:
     - target: {fileID: 4577034113271871886, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
       propertyPath: m_Name
       value: PP_Rock_Moss_Grown_09 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577034113271871886, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577034113271871886, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
@@ -3828,6 +3937,10 @@ PrefabInstance:
     - target: {fileID: 138836365270009319, guid: 7baba197ce36c92439b423eabaad3737, type: 3}
       propertyPath: m_Name
       value: PP_Meadow_08 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 138836365270009319, guid: 7baba197ce36c92439b423eabaad3737, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 767562868964138845, guid: 7baba197ce36c92439b423eabaad3737, type: 3}
       propertyPath: m_RootOrder
@@ -5127,6 +5240,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Meadow_08 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 138836365270009319, guid: 7baba197ce36c92439b423eabaad3737, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 767562868964138845, guid: 7baba197ce36c92439b423eabaad3737, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -5446,6 +5563,10 @@ PrefabInstance:
     - target: {fileID: 8123141273917358956, guid: 13dd10d6717971d4ea9125d158299b1e, type: 3}
       propertyPath: m_Name
       value: PP_Daffodil_03 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8123141273917358956, guid: 13dd10d6717971d4ea9125d158299b1e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8930885862814177750, guid: 13dd10d6717971d4ea9125d158299b1e, type: 3}
       propertyPath: m_RootOrder
@@ -5869,7 +5990,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 8639582345026337477, guid: a056c2ee05998c942a46e241f606b732, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 8639582345026337477, guid: a056c2ee05998c942a46e241f606b732, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6276,7 +6397,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000012015927304, guid: 5c02591794acece409986647ed6329a7, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 4000012015927304, guid: 5c02591794acece409986647ed6329a7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -7175,13 +7296,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5005448486912084737, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 636474552}
     - target: {fileID: 5311694882796314641, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
       propertyPath: m_Name
       value: Orc
       objectReference: {fileID: 0}
     - target: {fileID: 5311694882796315631, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 5311694882796315631, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8011,6 +8136,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Rock_Moss_Grown_11 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4500668923149335752, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4500668923149335752, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
 --- !u!4 &457472837 stripped
@@ -8244,6 +8377,14 @@ PrefabInstance:
     - target: {fileID: 4577034113271871886, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
       propertyPath: m_Name
       value: PP_Rock_Moss_Grown_09 (7)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577034113271871886, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577034113271871886, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
@@ -8731,6 +8872,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Daffodil_03 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 8123141273917358956, guid: 13dd10d6717971d4ea9125d158299b1e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8930885862814177750, guid: 13dd10d6717971d4ea9125d158299b1e, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -9198,6 +9343,14 @@ PrefabInstance:
     - target: {fileID: 4500668923149335752, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
       propertyPath: m_Name
       value: PP_Rock_Moss_Grown_11
+      objectReference: {fileID: 0}
+    - target: {fileID: 4500668923149335752, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4500668923149335752, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
@@ -9733,6 +9886,14 @@ PrefabInstance:
     - target: {fileID: 4577034113271871886, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
       propertyPath: m_Name
       value: PP_Rock_Moss_Grown_09 (8)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577034113271871886, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577034113271871886, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
@@ -11617,7 +11778,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000012359451834, guid: 38dea0631a962ad45b71e2759e4240d8, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4000012359451834, guid: 38dea0631a962ad45b71e2759e4240d8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -12043,6 +12204,14 @@ PrefabInstance:
     - target: {fileID: 4577034113271871886, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
       propertyPath: m_Name
       value: PP_Rock_Moss_Grown_09 (5)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577034113271871886, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577034113271871886, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
@@ -12488,7 +12657,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1 &706944421
 GameObject:
@@ -12578,6 +12747,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Rock_Moss_Grown_11 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4500668923149335752, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4500668923149335752, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
 --- !u!4 &708678601 stripped
@@ -12655,6 +12832,14 @@ PrefabInstance:
     - target: {fileID: 4577034113271871886, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
       propertyPath: m_Name
       value: PP_Rock_Moss_Grown_09 (6)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577034113271871886, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577034113271871886, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
@@ -14952,6 +15137,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Daffodil_03
       objectReference: {fileID: 0}
+    - target: {fileID: 8123141273917358956, guid: 13dd10d6717971d4ea9125d158299b1e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8930885862814177750, guid: 13dd10d6717971d4ea9125d158299b1e, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -15280,6 +15469,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Rock_Moss_Grown_11 (8)
       objectReference: {fileID: 0}
+    - target: {fileID: 4500668923149335752, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4500668923149335752, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
 --- !u!4 &841552569 stripped
@@ -15591,6 +15788,14 @@ PrefabInstance:
     - target: {fileID: 4577034113271871886, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
       propertyPath: m_Name
       value: PP_Rock_Moss_Grown_09
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577034113271871886, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577034113271871886, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
@@ -15924,7 +16129,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000011756025136, guid: cd34118c604e29141afea74caecd70f2, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4000011756025136, guid: cd34118c604e29141afea74caecd70f2, type: 3}
       propertyPath: m_LocalPosition.x
@@ -16925,6 +17130,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Daffodil_03 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8123141273917358956, guid: 13dd10d6717971d4ea9125d158299b1e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 8930885862814177750, guid: 13dd10d6717971d4ea9125d158299b1e, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -17315,6 +17524,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Meadow_07
       objectReference: {fileID: 0}
+    - target: {fileID: 2357419356555822539, guid: cf22a2db10f09a34495e9f83913738c8, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 3169668576073457521, guid: cf22a2db10f09a34495e9f83913738c8, type: 3}
       propertyPath: m_RootOrder
       value: 7
@@ -17475,7 +17688,7 @@ Transform:
   - {fileID: 1615191928}
   - {fileID: 1343097642}
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &978008523
 PrefabInstance:
@@ -20290,6 +20503,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Rock_Moss_Grown_11 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4500668923149335752, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4500668923149335752, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
 --- !u!4 &1081336167 stripped
@@ -21398,6 +21619,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Hyacinth_04 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2954823824624447290, guid: 194e9111af0c33840a49d573f2b26952, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 194e9111af0c33840a49d573f2b26952, type: 3}
 --- !u!4 &1151552889 stripped
@@ -22175,6 +22400,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Meadow_08
       objectReference: {fileID: 0}
+    - target: {fileID: 138836365270009319, guid: 7baba197ce36c92439b423eabaad3737, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 767562868964138845, guid: 7baba197ce36c92439b423eabaad3737, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -22565,6 +22794,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Rock_Moss_Grown_09 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 4577034113271871886, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577034113271871886, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
 --- !u!4 &1223682426 stripped
@@ -22874,63 +23111,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2470915096720291200, guid: 194e9111af0c33840a49d573f2b26952, type: 3}
   m_PrefabInstance: {fileID: 1237845929}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &1238039249
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2615140031921727871, guid: a39b346d1e750864e8c80e339f887389, type: 3}
-      propertyPath: m_Name
-      value: Big_Sword_Powerup
-      objectReference: {fileID: 0}
-    - target: {fileID: 2621061728826515585, guid: a39b346d1e750864e8c80e339f887389, type: 3}
-      propertyPath: m_RootOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2621061728826515585, guid: a39b346d1e750864e8c80e339f887389, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.3178134
-      objectReference: {fileID: 0}
-    - target: {fileID: 2621061728826515585, guid: a39b346d1e750864e8c80e339f887389, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.64
-      objectReference: {fileID: 0}
-    - target: {fileID: 2621061728826515585, guid: a39b346d1e750864e8c80e339f887389, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -22.695837
-      objectReference: {fileID: 0}
-    - target: {fileID: 2621061728826515585, guid: a39b346d1e750864e8c80e339f887389, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.6830138
-      objectReference: {fileID: 0}
-    - target: {fileID: 2621061728826515585, guid: a39b346d1e750864e8c80e339f887389, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0.18301202
-      objectReference: {fileID: 0}
-    - target: {fileID: 2621061728826515585, guid: a39b346d1e750864e8c80e339f887389, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.6830118
-      objectReference: {fileID: 0}
-    - target: {fileID: 2621061728826515585, guid: a39b346d1e750864e8c80e339f887389, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0.18301268
-      objectReference: {fileID: 0}
-    - target: {fileID: 2621061728826515585, guid: a39b346d1e750864e8c80e339f887389, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -30.000002
-      objectReference: {fileID: 0}
-    - target: {fileID: 2621061728826515585, guid: a39b346d1e750864e8c80e339f887389, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -90.00001
-      objectReference: {fileID: 0}
-    - target: {fileID: 2621061728826515585, guid: a39b346d1e750864e8c80e339f887389, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: a39b346d1e750864e8c80e339f887389, type: 3}
 --- !u!1001 &1243007177
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23726,6 +23906,14 @@ PrefabInstance:
     - target: {fileID: 4577034113271871886, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
       propertyPath: m_Name
       value: PP_Rock_Moss_Grown_09 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577034113271871886, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577034113271871886, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
@@ -27938,6 +28126,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Hyacinth_04 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2954823824624447290, guid: 194e9111af0c33840a49d573f2b26952, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 194e9111af0c33840a49d573f2b26952, type: 3}
 --- !u!4 &1562396490 stripped
@@ -28324,6 +28516,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Meadow_08 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 138836365270009319, guid: 7baba197ce36c92439b423eabaad3737, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 767562868964138845, guid: 7baba197ce36c92439b423eabaad3737, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -28609,6 +28805,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8930885862814177750, guid: 13dd10d6717971d4ea9125d158299b1e, type: 3}
   m_PrefabInstance: {fileID: 1608304505}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &1611867761
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5005448486912084737, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 636474552}
+    - target: {fileID: 5311694882796314641, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
+      propertyPath: m_Name
+      value: Orc (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311694882796315631, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311694882796315631, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 2.6390483
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311694882796315631, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.2028122
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311694882796315631, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 19.596125
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311694882796315631, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.38268548
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311694882796315631, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311694882796315631, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.92387867
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311694882796315631, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311694882796315631, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311694882796315631, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -135
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311694882796315631, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
 --- !u!1 &1615191927
 GameObject:
   m_ObjectHideFlags: 0
@@ -29860,6 +30117,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Meadow_08 (3)
       objectReference: {fileID: 0}
+    - target: {fileID: 138836365270009319, guid: 7baba197ce36c92439b423eabaad3737, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 767562868964138845, guid: 7baba197ce36c92439b423eabaad3737, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -30137,6 +30398,14 @@ PrefabInstance:
     - target: {fileID: 4500668923149335752, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
       propertyPath: m_Name
       value: PP_Rock_Moss_Grown_11 (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4500668923149335752, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4500668923149335752, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
@@ -31410,6 +31679,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Rock_Moss_Grown_11 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 4500668923149335752, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4500668923149335752, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
 --- !u!4 &1718862613 stripped
@@ -32589,6 +32866,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Rock_Moss_Grown_09 (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4577034113271871886, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577034113271871886, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
 --- !u!4 &1792265320 stripped
@@ -32822,6 +33107,14 @@ PrefabInstance:
     - target: {fileID: 4500668923149335752, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
       propertyPath: m_Name
       value: PP_Rock_Moss_Grown_11 (9)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4500668923149335752, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4500668923149335752, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
@@ -33320,11 +33613,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8095381497227825804, guid: df0302ddc2a17d7478822308fa3ea433, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000029802322
+      value: -0.000000018626451
       objectReference: {fileID: 0}
     - target: {fileID: 8095381497227825804, guid: df0302ddc2a17d7478822308fa3ea433, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.0000000121071935
+      value: 0.000000009313226
       objectReference: {fileID: 0}
     - target: {fileID: 8095381497927350851, guid: df0302ddc2a17d7478822308fa3ea433, type: 3}
       propertyPath: m_LocalPosition.x
@@ -33438,6 +33731,10 @@ PrefabInstance:
     - target: {fileID: 138836365270009319, guid: 7baba197ce36c92439b423eabaad3737, type: 3}
       propertyPath: m_Name
       value: PP_Meadow_08 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 138836365270009319, guid: 7baba197ce36c92439b423eabaad3737, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 767562868964138845, guid: 7baba197ce36c92439b423eabaad3737, type: 3}
       propertyPath: m_RootOrder
@@ -33707,6 +34004,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Rock_Moss_Grown_11
       objectReference: {fileID: 0}
+    - target: {fileID: 4500668923149335752, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4500668923149335752, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
 --- !u!4 &1836894307 stripped
@@ -33735,7 +34040,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4402044509841895798, guid: edb1705732b20ca4899272312fd7a86d, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 4402044509841895798, guid: edb1705732b20ca4899272312fd7a86d, type: 3}
       propertyPath: m_AnchorMax.x
@@ -33844,6 +34149,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 790b99b636670824c8c6c359f47f9e8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1843455893 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 216773604191355865, guid: edb1705732b20ca4899272312fd7a86d, type: 3}
+  m_PrefabInstance: {fileID: 1843455889}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &1844729159
@@ -35012,6 +35328,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Rock_Moss_Grown_09 (4)
       objectReference: {fileID: 0}
+    - target: {fileID: 4577034113271871886, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577034113271871886, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
 --- !u!4 &1892233856 stripped
@@ -35188,7 +35512,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000013718473930, guid: 586acbe765df7c34385298970076297e, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4000013718473930, guid: 586acbe765df7c34385298970076297e, type: 3}
       propertyPath: m_LocalPosition.x
@@ -35279,11 +35603,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2471955591508242837, guid: 9a60dd6328429b042b85df2bf2552ecb, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2471955591508242837, guid: 9a60dd6328429b042b85df2bf2552ecb, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.8832216
+      value: -9.73
       objectReference: {fileID: 0}
     - target: {fileID: 2471955591508242837, guid: 9a60dd6328429b042b85df2bf2552ecb, type: 3}
       propertyPath: m_LocalPosition.y
@@ -35291,7 +35615,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2471955591508242837, guid: 9a60dd6328429b042b85df2bf2552ecb, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -19.313175
+      value: -15.74
       objectReference: {fileID: 0}
     - target: {fileID: 2471955591508242837, guid: 9a60dd6328429b042b85df2bf2552ecb, type: 3}
       propertyPath: m_LocalRotation.w
@@ -36114,6 +36438,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Rock_Moss_Grown_09 (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 4577034113271871886, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577034113271871886, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
 --- !u!4 &1960054265 stripped
@@ -36824,6 +37156,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Meadow_08 (6)
       objectReference: {fileID: 0}
+    - target: {fileID: 138836365270009319, guid: 7baba197ce36c92439b423eabaad3737, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 767562868964138845, guid: 7baba197ce36c92439b423eabaad3737, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -37136,6 +37472,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Rock_Moss_Grown_11 (7)
       objectReference: {fileID: 0}
+    - target: {fileID: 4500668923149335752, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4500668923149335752, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
 --- !u!4 &2007815476 stripped
@@ -37153,6 +37497,10 @@ PrefabInstance:
     - target: {fileID: 8123141273917358956, guid: 13dd10d6717971d4ea9125d158299b1e, type: 3}
       propertyPath: m_Name
       value: PP_Daffodil_03 (2)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8123141273917358956, guid: 13dd10d6717971d4ea9125d158299b1e, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8930885862814177750, guid: 13dd10d6717971d4ea9125d158299b1e, type: 3}
       propertyPath: m_RootOrder
@@ -37637,6 +37985,14 @@ PrefabInstance:
     - target: {fileID: 4500668923149335752, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
       propertyPath: m_Name
       value: PP_Rock_Moss_Grown_11 (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4500668923149335752, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4500668923149335752, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a524090786e7ba545bd5ce3d24c9a3fb, type: 3}
@@ -38571,6 +38927,67 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2470915096720291200, guid: 194e9111af0c33840a49d573f2b26952, type: 3}
   m_PrefabInstance: {fileID: 2082104751}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &2085610130
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5005448486912084737, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 636474552}
+    - target: {fileID: 5311694882796314641, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
+      propertyPath: m_Name
+      value: Orc (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311694882796315631, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311694882796315631, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -29.475319
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311694882796315631, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 2.265317
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311694882796315631, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 8.140636
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311694882796315631, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311694882796315631, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311694882796315631, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311694882796315631, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311694882796315631, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311694882796315631, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5311694882796315631, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: abe5a6d5d61ab994a98443f88d3a48db, type: 3}
 --- !u!1001 &2094997855
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -39150,6 +39567,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PP_Rock_Moss_Grown_09
       objectReference: {fileID: 0}
+    - target: {fileID: 4577034113271871886, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+      propertyPath: m_NavMeshLayer
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4577034113271871886, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24457fdf8e66c3c49b7599931e0fdcb2, type: 3}
 --- !u!4 &2123631481 stripped
@@ -39227,6 +39652,10 @@ PrefabInstance:
     - target: {fileID: 2954823824624447290, guid: 194e9111af0c33840a49d573f2b26952, type: 3}
       propertyPath: m_Name
       value: PP_Hyacinth_04
+      objectReference: {fileID: 0}
+    - target: {fileID: 2954823824624447290, guid: 194e9111af0c33840a49d573f2b26952, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 194e9111af0c33840a49d573f2b26952, type: 3}
@@ -39360,7 +39789,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4000011134189418, guid: af16961524284e54491133548920258b, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4000011134189418, guid: af16961524284e54491133548920258b, type: 3}
       propertyPath: m_LocalPosition.x

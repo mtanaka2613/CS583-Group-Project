@@ -11,6 +11,9 @@ TagManager:
   - Canvas
   - Trees
   - PowerGem
+  - Powerup
+  - Sword
+  - Axe
   layers:
   - Default
   - TransparentFX

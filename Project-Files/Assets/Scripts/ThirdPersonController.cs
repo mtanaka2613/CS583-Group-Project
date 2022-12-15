@@ -8,6 +8,7 @@ using UnityEditor.TextCore.Text;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class ThirdPersonController: MonoBehaviour
 {
@@ -25,6 +26,8 @@ public class ThirdPersonController: MonoBehaviour
     [SerializeField]
     private float maxSpeed = 5.0f; //Player Movement Speed
 
+    bool isBlocking;
+
     private Vector3 forceDirection = Vector3.zero;
 
     [SerializeField]
@@ -36,9 +39,12 @@ public class ThirdPersonController: MonoBehaviour
     private CapsuleCollider playerCollider;
 
     //Health
-    public int maxHealth = 10;
+    public int maxHealth = 20;
     public int currentHealth;
     public HealthBar healthBar;
+
+    bool alreadyDamaged;
+    public float timeBetweenAttack = 2f;
 
     //reference to SceneController
     public SceneController sc;
@@ -46,12 +52,14 @@ public class ThirdPersonController: MonoBehaviour
     //counts the current amount PowerGems collected in a level
     int powerGemsCount = 0;
 
-    
-    public AudioSource footstepsSound;
-   
+    //Audio 
+    public AudioSource footStepsSound;
     public AudioSource swingSound;
-    
     public AudioSource collectedGem;
+
+    //PowerUp Text Reference
+    public TextMeshProUGUI powerUpText;
+
 
     private void Awake()
     {
@@ -65,7 +73,6 @@ public class ThirdPersonController: MonoBehaviour
 
         currentHealth = maxHealth; //Set health
         healthBar.SetMaxHealth(currentHealth);
-
     }
 
     private void OnEnable()
@@ -94,13 +101,13 @@ public class ThirdPersonController: MonoBehaviour
         forceDirection = Vector3.zero;
 
         // if the player is moving and grounded play footsteps
-        if (rb.velocity.magnitude > 0.5 && isGrounded()) 
+        if (rb.velocity.magnitude > 0.5 & isGrounded() & Time.timeScale != 0f) 
         {
-            footstepsSound.enabled = true;
+            footStepsSound.enabled = true;
         }
         else
         {
-            footstepsSound.enabled = false;
+            footStepsSound.enabled = false;
         }
 
         //adds increased velocity when falling after jumping
@@ -120,7 +127,7 @@ public class ThirdPersonController: MonoBehaviour
         LookAt();
 
         // check if player's health is not zero
-        if (currentHealth == 0)
+        if (currentHealth <= 0)
         {
             SceneManager.LoadScene(10);
         }
@@ -203,6 +210,7 @@ public class ThirdPersonController: MonoBehaviour
         //if not blocking, do blocking animation
         if (!animator.GetBool("block") & Time.timeScale != 0)
         {
+            isBlocking = true;
             animator.SetBool("block", true);
             childColliders[0].enabled = true;
             return;
@@ -227,7 +235,33 @@ public class ThirdPersonController: MonoBehaviour
             Destroy(collision.collider.gameObject); //Deletes the object
             DeterminePowerupType(collision.collider.gameObject.name); //Helper Function
         }
+
+        if (collision.collider.CompareTag("Axe"))
+        {
+            if (!alreadyDamaged)
+            {
+                if (isBlocking)
+                {
+                    TakeDamage(3);
+                    alreadyDamaged = true;
+                    Invoke(nameof(ResetAlreadyDamaged), timeBetweenAttack);
+                }
+                else
+                {
+                    TakeDamage(5);
+                    alreadyDamaged = true;
+                    Invoke(nameof(ResetAlreadyDamaged), timeBetweenAttack);
+                }
+            }
+            
+        }
     }
+
+    private void ResetAlreadyDamaged()
+    {
+        alreadyDamaged = false;
+    }
+
 
     //Help Determines the Powerup Type
     private void DeterminePowerupType(String PowerupName)
@@ -236,20 +270,23 @@ public class ThirdPersonController: MonoBehaviour
         if (PowerupName.Contains("Speed"))
         {
             Debug.Log("Speed Powerup Active");
+            powerUpText.text = "Speed Boost Active";
             StartCoroutine(SpeedPowerup());
         }
 
         //Calls Big Sword Powerup
-        if (PowerupName.Contains("Big Sword"))
+        if (PowerupName.Contains("Big_Sword"))
         {
             Debug.Log("Big Sword Powerup Active");
+            powerUpText.text = "Big Sword Active";
             StartCoroutine(BigSwordPowerup());
         }
 
         //Calls Mega Jump Powerup
-        if (PowerupName.Contains("Mega Jump"))
+        if (PowerupName.Contains("Mega_Jump"))
         {
             Debug.Log("Mega Jump Powerup Active");
+            powerUpText.text = "Mega Jump Active";
             StartCoroutine(MegaJumpPowerup());
         }
     }
@@ -261,6 +298,7 @@ public class ThirdPersonController: MonoBehaviour
         yield return new WaitForSecondsRealtime(10f);
         childColliders[1].size = temp; //Revert back to normal sword collider size
         Debug.Log("Big Sword Powerup Expired");
+        powerUpText.text = "";
     }
 
     IEnumerator MegaJumpPowerup()
@@ -270,6 +308,7 @@ public class ThirdPersonController: MonoBehaviour
         yield return new WaitForSecondsRealtime(5.0f);
         jumpForce = temp; //Revert back to normal jump force
         Debug.Log("Mega Jump Powerup Expired");
+        powerUpText.text = "";
     }
 
     //Speed Powerup
@@ -279,6 +318,7 @@ public class ThirdPersonController: MonoBehaviour
         yield return new WaitForSecondsRealtime(10f); //Timer active for 10 seconds
         maxSpeed = 5.0f; //Revert back to normal speed
         Debug.Log("Speed Powerup Expired");
+        powerUpText.text = "";
     }
 
     public void TakeDamage(int attackDamage)
