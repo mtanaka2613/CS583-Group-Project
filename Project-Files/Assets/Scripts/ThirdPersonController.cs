@@ -239,6 +239,37 @@ public class ThirdPersonController: MonoBehaviour
             StartCoroutine(SpeedPowerup());
         }
 
+        //Calls Big Sword Powerup
+        if (PowerupName.Contains("Big Sword"))
+        {
+            Debug.Log("Big Sword Powerup Active");
+            StartCoroutine(BigSwordPowerup());
+        }
+
+        //Calls Mega Jump Powerup
+        if (PowerupName.Contains("Mega Jump"))
+        {
+            Debug.Log("Mega Jump Powerup Active");
+            StartCoroutine(MegaJumpPowerup());
+        }
+    }
+
+    IEnumerator BigSwordPowerup()
+    {
+        Vector3 temp = new Vector3(childColliders[1].size.x, childColliders[1].size.y, childColliders[1].size.z); //Store original value of sword collider size
+        childColliders[1].size = temp * 2; //Doubles size of sword collider
+        yield return new WaitForSecondsRealtime(10f);
+        childColliders[1].size = temp; //Revert back to normal sword collider size
+        Debug.Log("Big Sword Powerup Expired");
+    }
+
+    IEnumerator MegaJumpPowerup()
+    {
+        float temp = jumpForce; //Store original value of jump force
+        jumpForce = 15f; //Jump height boost
+        yield return new WaitForSecondsRealtime(5.0f);
+        jumpForce = temp; //Revert back to normal jump force
+        Debug.Log("Mega Jump Powerup Expired");
     }
 
     //Speed Powerup

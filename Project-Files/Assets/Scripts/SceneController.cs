@@ -19,7 +19,7 @@ public class SceneController : MonoBehaviour
     private void Awake()
     {
         uiActionAsset = new UIActionAsset();
-        itemsText.text = "Gems: 0 / 5";
+        //itemsText.text = "Gems: 0 / 5";
     }
 
     private void OnEnable()

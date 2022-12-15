@@ -880,7 +880,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackDistance: 2
-  speed: 0
+  speed: 3
   attackTime: 3
 --- !u!143 &2488707653518527199
 CharacterController:

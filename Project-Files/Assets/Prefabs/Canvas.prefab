@@ -664,7 +664,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Gems: '
+  m_text: 'Gems: 0 / 5'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 3efe49cf80f6ab24480460c8eb32ef43, type: 2}
   m_sharedMaterial: {fileID: 7833794719012396792, guid: 3efe49cf80f6ab24480460c8eb32ef43, type: 2}
