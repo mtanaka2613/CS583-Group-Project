@@ -43,8 +43,15 @@ public class ThirdPersonController: MonoBehaviour
     //reference to SceneController
     public SceneController sc;
 
-    //Amount of hidden items
-    int totalItems = 0;
+    //counts the current amount PowerGems collected in a level
+    int powerGemsCount = 0;
+
+    
+    public AudioSource footstepsSound;
+   
+    public AudioSource swingSound;
+    
+    public AudioSource collectedGem;
 
     private void Awake()
     {
@@ -58,6 +65,7 @@ public class ThirdPersonController: MonoBehaviour
 
         currentHealth = maxHealth; //Set health
         healthBar.SetMaxHealth(currentHealth);
+
     }
 
     private void OnEnable()
@@ -83,7 +91,17 @@ public class ThirdPersonController: MonoBehaviour
         forceDirection += move.ReadValue<Vector2>().y * GetCameraForward(playerCamera) * movementForce;
 
         rb.AddForce(forceDirection, ForceMode.Impulse);
-        forceDirection = Vector3.zero;  
+        forceDirection = Vector3.zero;
+
+        // if the player is moving and grounded play footsteps
+        if (rb.velocity.magnitude > 0.5 && isGrounded()) 
+        {
+            footstepsSound.enabled = true;
+        }
+        else
+        {
+            footstepsSound.enabled = false;
+        }
 
         //adds increased velocity when falling after jumping
         if (rb.velocity.y < 0f)
@@ -100,6 +118,12 @@ public class ThirdPersonController: MonoBehaviour
         }
 
         LookAt();
+
+        // check if player's health is not zero
+        if (currentHealth == 0)
+        {
+            SceneManager.LoadScene(10);
+        }
     }
 
 
@@ -138,7 +162,6 @@ public class ThirdPersonController: MonoBehaviour
         if (isGrounded())
         {
             forceDirection += Vector3.up * jumpForce;
-            // animator trigger for jump?
         }
     }
 
@@ -157,8 +180,12 @@ public class ThirdPersonController: MonoBehaviour
 
     private void DoAttack(InputAction.CallbackContext obj)
     {
-        childColliders[1].enabled = true; // Enables Sword Collider
-        animator.SetTrigger("attack");
+        if (Time.timeScale != 0 ) //checks if the game is paused
+        {
+            childColliders[1].enabled = true; // Enables Sword Collider
+            animator.SetTrigger("attack");
+            swingSound.Play(); //plays swing sound
+        }
     }
 
     //private void OnMouseDown()
@@ -174,7 +201,7 @@ public class ThirdPersonController: MonoBehaviour
     private void DoBlock(InputAction.CallbackContext obj)
     {
         //if not blocking, do blocking animation
-        if (!animator.GetBool("block"))
+        if (!animator.GetBool("block") & Time.timeScale != 0)
         {
             animator.SetBool("block", true);
             childColliders[0].enabled = true;
@@ -182,7 +209,7 @@ public class ThirdPersonController: MonoBehaviour
         }
         
         //if blocking, undo blocking animation
-        if (animator.GetBool("block"))
+        if (animator.GetBool("block") & Time.timeScale != 0)
         {
             animator.SetBool("block", false);
             childColliders[0].enabled = false;
@@ -223,27 +250,38 @@ public class ThirdPersonController: MonoBehaviour
         Debug.Log("Speed Powerup Expired");
     }
 
+    public void TakeDamage(int attackDamage)
+    {
+        //TODO: Check if player is blocking
+        // create a bool variable that is set to true when blocking
+        currentHealth -= attackDamage;
+        healthBar.UpdateHealth(currentHealth); // updates the healthbar to the current health after taking damage
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("HiddenItem"))
+        if (other.CompareTag("PowerGem"))
         {
+            collectedGem.Play();
             Destroy(other.gameObject);
-            totalItems += 1;
+            // play gem collected audio clip
+            
+            powerGemsCount += 1;
 
             // Check if player completed all levels
-            if (GameManager.Instance.hasCompletedAllLevels() & totalItems == 5)
+            if (GameManager.Instance.hasCompletedAllLevels() & powerGemsCount == 5)
             {
                 SceneManager.LoadScene(9); //End Screen
                 Cursor.lockState = CursorLockMode.Confined;
             }
-            else if (totalItems == 5) 
+            else if (powerGemsCount == 5) 
             {
                 SceneManager.LoadScene(8); //Level cleared screen
                 Cursor.lockState = CursorLockMode.Confined;
             }
             else
             {
-                sc.UpdateItemsText(totalItems);
+                sc.UpdateItemsText(powerGemsCount);
             }
         }
     }

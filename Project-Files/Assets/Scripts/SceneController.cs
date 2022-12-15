@@ -19,7 +19,7 @@ public class SceneController : MonoBehaviour
     private void Awake()
     {
         uiActionAsset = new UIActionAsset();
-        itemsText.text = "ITEMS: 0 / 5";
+        itemsText.text = "Gems: 0 / 5";
     }
 
     private void OnEnable()
@@ -75,9 +75,9 @@ public class SceneController : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
     }
 
-    public void UpdateItemsText(int itemCount)
+    public void UpdateItemsText(int gemsCount)
     {
-        itemsText.text = "ITEMS: " + itemCount + " / 5";
+        itemsText.text = "Gems: " + gemsCount + " / 5";
     }
 
 }

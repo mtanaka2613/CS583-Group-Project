@@ -12,12 +12,12 @@ public class ThirdPersonAnimation : MonoBehaviour
     void Start()
     {
         animator = gameObject.GetComponent<Animator>();
-        rb = gameObject.GetComponent<Rigidbody>();  
+        rb = gameObject.GetComponent<Rigidbody>();        
     }
 
     // Update is called once per frame
     void Update()
     {
-        animator.SetFloat("speed", rb.velocity.magnitude / maxSpeed);
+            animator.SetFloat("speed", rb.velocity.magnitude / maxSpeed);
     }
 }

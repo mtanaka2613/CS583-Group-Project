@@ -9,6 +9,8 @@ TagManager:
   - HiddenItem
   - Enemy
   - Canvas
+  - Trees
+  - PowerGem
   layers:
   - Default
   - TransparentFX
