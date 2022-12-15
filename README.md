@@ -18,8 +18,8 @@ Our group project for CS583. A 3rd Person Action Fantasy Hack & Slash game produ
 
 * Russell Martinez - Team Leader & Lead Power Up Developer
 * Madison Tanaka - Lead Level & Website Designer
-* Francisco Martinez - Lead Player & UI Developer
-* Hanlin Jin - Lead Enemy Developer
+* Francisco Martinez - Lead Player, Enemy, Audio, UI, and Win Condition Developer
+* Hanlin Jin - Enemy Developer
 
 
 ## Version History
