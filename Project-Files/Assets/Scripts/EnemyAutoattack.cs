@@ -11,15 +11,15 @@ public class EnemyAutoattack : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        olayer = GameObject.FindGameObjectWithTag("player").transform;
+        player = GameObject.FindGameObjectWithTag("player").transform;
     }
 
     // Update is called once per frame
     void Update()
     {
-        dist = Vector3.Distance(player.position transform.position);
+        dist = Vector3.Distance(player.position, transform.position);
 
-        if(dis <= howclose)
+        if(dist <= howclose)
         {
             transform.LookAt(player);
             GetComponent<Rigidbody>().AddForce(transform.forward * moveSpeed);
@@ -32,3 +32,4 @@ public class EnemyAutoattack : MonoBehaviour
         }
     }
 }
+
