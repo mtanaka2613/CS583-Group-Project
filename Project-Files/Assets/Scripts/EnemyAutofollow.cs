@@ -20,6 +20,6 @@ public class EnemyAutofollow : MonoBehaviour
     {
         Vector3 lookDirection = (player.transform.postion - transform.position).normalized;
 
-        enemyRb.AddForce(lookDirection * speed)
+        enemyRb.AddForce(lookDirection * speed);
     }
 }
