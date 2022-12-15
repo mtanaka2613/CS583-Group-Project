@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Enemyspawn : MonoBehaviour
 {
-    oublic GameObject enemyPrefab;
-    preivate float spawnRange = 9.0f;
+
+    public GameObject enemyPrefab;
+    private float spawnRange = 9.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,7 +15,7 @@ public class Enemyspawn : MonoBehaviour
 
         Vector3 randomPos = new Vector3(spawnPosX, spawnPosY, 0);
 
-        Instantiate(enemyPrefab, randomPos, enemyPrefab.Transform.rotation);
+        Instantiate(enemyPrefab, randomPos, enemyPrefab.transform.rotation);
     }
 
     // Update is called once per frame
