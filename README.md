@@ -12,7 +12,7 @@ Our group project for CS583. A 3rd Person Action Fantasy Hack & Slash game produ
 
 ### Executing program
 
-* Open up executable in BrawlingMayhem_Demo_Windows folder
+* Open up executable in BrawlingMayhem_Final_Game_Windows folder
 
 ## Authors
 
