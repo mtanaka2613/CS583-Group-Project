@@ -43,6 +43,7 @@ Assets used:
 * [Epic Game Hits SFX](https://assetstore.unity.com/packages/audio/sound-fx/epic-game-hits-sfx-36617#content)
 * [Free Fantasy Adventure Music Pack](https://assetstore.unity.com/packages/audio/music/orchestral/free-fantasy-adventure-music-pack-118684)
 * [Simple Gems Ultimate Animated Customizable Pack](https://assetstore.unity.com/packages/3d/props/simple-gems-ultimate-animated-customizable-pack-73764#content)
+* [Skybox Series Free](https://assetstore.unity.com/packages/2d/textures-materials/sky/skybox-series-free-103633)
 
 Learning References:
 * [Controller and Keyboard Menu Navigation w/ Input System - Unity Tutorial](https://www.youtube.com/watch?v=Hn804Wgr3KE)
