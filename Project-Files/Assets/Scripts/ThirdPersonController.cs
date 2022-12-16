@@ -56,6 +56,8 @@ public class ThirdPersonController: MonoBehaviour
     public AudioSource footStepsSound;
     public AudioSource swingSound;
     public AudioSource collectedGem;
+    public AudioSource speedBoostSFX;
+    public AudioSource megaJumpSFX;
 
     //PowerUp Text Reference
     public TextMeshProUGUI powerUpText;
@@ -269,6 +271,7 @@ public class ThirdPersonController: MonoBehaviour
         //Calls Speed Powerup
         if (PowerupName.Contains("Speed"))
         {
+            speedBoostSFX.Play();
             Debug.Log("Speed Powerup Active");
             powerUpText.text = "Speed Boost Active";
             StartCoroutine(SpeedPowerup());
@@ -285,6 +288,7 @@ public class ThirdPersonController: MonoBehaviour
         //Calls Mega Jump Powerup
         if (PowerupName.Contains("Mega_Jump"))
         {
+            megaJumpSFX.Play();
             Debug.Log("Mega Jump Powerup Active");
             powerUpText.text = "Mega Jump Active";
             StartCoroutine(MegaJumpPowerup());
